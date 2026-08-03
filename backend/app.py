@@ -2,6 +2,13 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 from config import Config
 from models import db
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Sistem Prediksi Dropout Aktif!"
 
 # Import blueprints (Flask)
 from routes.auth import auth_bp
@@ -46,3 +53,8 @@ def create_app():
 if __name__ == '__main__':
     app = create_app()
     app.run(debug=True, port=5000)
+    import os
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
