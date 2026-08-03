@@ -86,7 +86,7 @@ export default function SiswaPage() {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailData, setDetailData] = useState<{
-    student: { id: number; siswa_id: string; nama: string; kelas: string };
+    student: { id: number; siswa_id: string; nama: string; nama_lengkap?: string; kelas: string };
     data_raw: Record<string, string>;
     data_encoded: Record<string, number>;
     prediction_detail: {
