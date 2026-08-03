@@ -47,4 +47,6 @@ def create_app():
 if __name__ == '__main__':
     app = create_app()
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    # Nonaktifkan debug mode di production (Railway) agar tidak terjadi restart child process yang memblokir port
+    is_prod = "PORT" in os.environ
+    app.run(host="0.0.0.0", port=port, debug=not is_prod)
