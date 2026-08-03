@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import api from "@/lib/api";
 import {
   TrendingUp, AlertTriangle, ShieldCheck, RefreshCw,
@@ -13,7 +13,7 @@ const RISK_BADGE: Record<string, string> = {
   Rendah:  "bg-emerald-500/15 text-emerald-400 border-emerald-500/20",
 };
 
-const RISK_ICON: Record<string, JSX.Element> = {
+const RISK_ICON: Record<string, ReactNode> = {
   Tinggi: <AlertTriangle className="w-3.5 h-3.5" />,
   Sedang: <TrendingUp className="w-3.5 h-3.5" />,
   Rendah: <ShieldCheck className="w-3.5 h-3.5" />,
