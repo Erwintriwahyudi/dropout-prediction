@@ -53,8 +53,11 @@ def create_app():
 if __name__ == '__main__':
     app = create_app()
     app.run(debug=True, port=5000)
-    import os
 
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+import os
+
+if __name__ == "__main__":
+  port = int(
+      os.environ.get("PORT", 5000)
+  )  # Mengambil port dari Railway atau default ke 5000
+  app.run(host="0.0.0.0", port=port)  # Wajib 0.0.0.0 supaya bisa diakses publik
